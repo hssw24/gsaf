@@ -1,5 +1,8 @@
 body {
     background-color: rgb(0, 0, 0);
+    text-align: center;
+    background-image: url("bilder/Titelbild_01.jpg");
+    color: white;
 }
 
 h3{
@@ -16,4 +19,9 @@ h3{
 }
 .button:hover {
     background-color: #0056b3;
+}
+
+.box{
+    background-color: #000000;
+
 }
