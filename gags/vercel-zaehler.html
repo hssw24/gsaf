@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Seitenzähler-Test</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background-color: #f9f9f9;
+    }
+
+    #global-counter {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      padding: 12px 16px;
+      font-size: 14px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Willkommen auf der Testseite</h1>
+  <p>Diese Seite zeigt einen globalen Besucherzähler in der Ecke an.</p>
+
+  <div id="global-counter">
+    Besucher insgesamt: <span id="global-count">...</span>
+  </div>
+
+  <script>
+    fetch('https://api.countapi.xyz/hit/beispielprojekt123/vercel-zaehler')
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('global-count').textContent = data.value;
+      });
+  </script>
+
+</body>
+</html>
