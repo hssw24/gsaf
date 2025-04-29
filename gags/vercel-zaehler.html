@@ -23,6 +23,13 @@
       box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       z-index: 9999;
     }
+
+/*Besucherzähler wird mit CSS (.zaehler-ul) unten links positioniert*/
+    .zaehler-ul{ 
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+    }
   </style>
 </head>
 <body>
@@ -34,6 +41,16 @@
     Besucher insgesamt: <span id="global-count">...</span>
   </div>
 
+<!--Besucherzähler wird mit CSS (.zaehler-ul) unten links positioniert-->  
+  <div class="zaehler-ul">
+
+    <a href='https://www.free-counters.org/'>https://www.Free-Counters.org</a> 
+
+    <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=364c5564f86a6a668df4c50ead5bc2123d8de4b7'></script>
+    <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1325789/t/3"></script>
+    
+  </div>
+
   <script>
     fetch('https://api.countapi.xyz/hit/beispielprojekt123/vercel-zaehler')
       .then(res => res.json())
@@ -41,6 +58,7 @@
         document.getElementById('global-count').textContent = data.value;
       });
   </script>
+
 
 </body>
 </html>
